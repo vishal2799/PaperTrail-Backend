@@ -1,0 +1,47 @@
+# ======================
+# Node.js
+# ======================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ======================
+# Environment files
+# ======================
+.env
+.env.*  # in case you have .env.development etc.
+
+# ======================
+# Logs
+# ======================
+logs
+*.log
+
+# ======================
+# Drizzle ORM
+# ======================
+.drizzle/   # ✅ ignore Drizzle's cache
+# drizzle/  # ❌ DO NOT ignore migrations folder — keep SQL migrations in Git!
+
+# ======================
+# System files
+# ======================
+.DS_Store
+
+# ======================
+# Editor settings (optional but common)
+# ======================
+.vscode/
+.idea/
+
+# ======================
+# Local DB dumps (optional)
+# ======================
+dump.sql
+*.dump
+
+# ======================
+# OS trash
+# ======================
+Thumbs.db
