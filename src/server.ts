@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import authRoutes from './routes/auth.routes';
 import docsRoutes from './routes/docs.routes';
 import notificationsRoutes from './routes/notifications.routes';
+import { errorHandler } from './middleware/errorMiddleware';
 
 dotenv.config();
 
@@ -17,6 +18,8 @@ app.use('/api/notifications', notificationsRoutes);
 app.get('/', (req, res) => {
     res.send('PaperTrail API Running ✅')
 });
+
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
