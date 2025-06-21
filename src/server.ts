@@ -4,6 +4,7 @@ import authRoutes from './routes/auth.routes';
 import docsRoutes from './routes/docs.routes';
 import notificationsRoutes from './routes/notifications.routes';
 import { errorHandler } from './middleware/errorMiddleware';
+import { notFound } from './middleware/notFound';
 
 dotenv.config();
 
@@ -18,6 +19,7 @@ app.get('/', (req, res) => {
     res.send('PaperTrail API Running ✅')
 });
 
+app.use(notFound);
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 4000;

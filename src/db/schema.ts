@@ -1,4 +1,4 @@
-import { pgTable, integer, varchar, timestamp } from 'drizzle-orm/pg-core';
+import { pgTable, integer, varchar, timestamp, text } from 'drizzle-orm/pg-core';
 
 export const users = pgTable('users', {
   id: integer().primaryKey().generatedAlwaysAsIdentity(),
@@ -13,6 +13,7 @@ export const documents = pgTable('documents', {
   id: integer().primaryKey().generatedAlwaysAsIdentity(),
   userId: integer('user_id').references(() => users.id),
   title: varchar('title', { length: 256 }).notNull(),
+  content: text("content"),
   expiryDate: timestamp('expiry_date').notNull(),
   createdAt: timestamp('created_at').defaultNow(),
 });
