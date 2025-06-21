@@ -1,6 +1,5 @@
 import express from 'express';
 import dotenv from 'dotenv';
-
 import authRoutes from './routes/auth.routes';
 import docsRoutes from './routes/docs.routes';
 import notificationsRoutes from './routes/notifications.routes';
